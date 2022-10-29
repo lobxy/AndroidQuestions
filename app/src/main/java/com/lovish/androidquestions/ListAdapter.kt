@@ -37,11 +37,16 @@ class ListAdapter(private val data: ArrayList<Question>, private val itemClickCa
             fun itemClicked(view: View) {
                 itemClickCallback.itemClicked(adapterPosition)
             }
+
+            fun itemBookmarked(view: View) {
+                itemClickCallback.itemBookmarked(adapterPosition)
+            }
         }
     }
 
     interface ItemClicked {
         fun itemClicked(position: Int)
+        fun itemBookmarked(position: Int)
     }
 
 }

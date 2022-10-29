@@ -37,7 +37,5 @@
             android:text="@{data.answer}"
             android:textSize="15sp"
             tools:text="What is android lifecycle" />
-
-
     </LinearLayout>
 </layout>

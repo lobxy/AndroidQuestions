@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
 import com.lovish.androidquestions.databinding.FragmentDetailViewPagerBinding
 import com.lovish.androidquestions.model.Question
 
@@ -28,7 +29,7 @@ class DetailViewPagerFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_detail_view_pager, container, false)
         binding.clickEvent = ClickAction()
 
@@ -41,6 +42,20 @@ class DetailViewPagerFragment : Fragment() {
         adapter = ViewPagerAdapter(childFragmentManager, dataList)
         binding.idViewPager.setCurrentItem(positionSelected, false)
         binding.idViewPager.adapter = adapter
+        binding.idViewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+
+            }
+
+            override fun onPageSelected(position: Int) {
+                binding.data = dataList?.get(position)
+                binding.executePendingBindings()
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {
+            }
+
+        })
     }
 
     companion object {
@@ -59,5 +74,10 @@ class DetailViewPagerFragment : Fragment() {
         fun backPressed(view: View) {
             activity?.onBackPressed()
         }
+
+        fun bookmark(view: View) {
+            dataList?.get(binding.idViewPager.currentItem)?.bookmarked = !(dataList?.get(binding.idViewPager.currentItem)?.bookmarked == true)
+        }
+
     }
 }

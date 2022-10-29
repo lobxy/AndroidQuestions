@@ -19,16 +19,17 @@
             android:background="@color/white"
             tools:context=".MainActivity">
 
-            <TextView
-                android:id="@+id/idTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-black"
-                android:text="Android Questions and Answers"
-                android:textAlignment="center"
-                android:textSize="20sp"
+            <include
+                android:id="@+id/idToolbar"
+                layout="@layout/layout_toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/idSearchToolbar"
+                layout="@layout/layout_search"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +46,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/idTitle"
+                app:layout_constraintTop_toBottomOf="@+id/idToolbar"
                 app:layout_constraintVertical_bias="0.0"
                 tools:listitem="@layout/inner_list" />
 

@@ -10,32 +10,67 @@
 
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".QuestionDetailFragment">
+        android:background="@color/white"
+        android:fillViewport="true">
 
-        <TextView
-            android:id="@+id/idQuestion"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#F6F3F3"
-            android:fontFamily="sans-serif-medium"
-            android:padding="10dp"
-            android:text="@{data.question}"
-            android:textSize="15sp"
-            tools:text="What is android lifecycle" />
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            tools:context=".QuestionDetailFragment">
 
-        <TextView
-            android:id="@+id/idSolution"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="sans-serif"
-            android:padding="10dp"
-            android:text="@{data.answer}"
-            android:textSize="15sp"
-            tools:text="What is android lifecycle" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/idQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@{data.question}"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                tools:text="Q1. What is the most frequent etiologic agent of acute infective endocarditis in IV drug abusers?" />
+
+            <TextView
+                android:id="@+id/idSolution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="16dp"
+                android:background="@drawable/solution_bg"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@{data.answer}"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                tools:text="What is android lifecycle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/reference"
+                android:textAllCaps="true"
+                android:textColor="@color/referenceTitleColor"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/idReference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Gray's anatomy , 41st edition, page number : 312"
+                android:textColor="@color/referenceColor"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </layout>

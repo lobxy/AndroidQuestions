@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="clickEvent"
+            type="com.lovish.androidquestions.MainActivity.ClickAction" />
     </data>
 
     <FrameLayout
@@ -16,7 +19,7 @@
             android:id="@+id/idMainContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
+            android:background="@color/background"
             tools:context=".MainActivity">
 
             <include
@@ -37,10 +40,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/idRecyclerView"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

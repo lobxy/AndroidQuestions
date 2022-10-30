@@ -7,4 +7,6 @@
     <string name="questions">Questions</string>
     <string name="android_questions">Android Questions</string>
     <string name="search_here">Search here</string>
+    <string name="next">Next</string>
+    <string name="previous">Prev</string>
 </resources>

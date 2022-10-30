@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.lovish.androidquestions.databinding.ActivityMainBinding
 import com.lovish.androidquestions.model.Question
 
-class MainActivity : AppCompatActivity(), ListAdapter.ItemClicked {
+class MainActivity : AppCompatActivity(), IDataUpdated, ListAdapter.ItemClicked {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var dataList: ArrayList<Question>
@@ -58,5 +58,9 @@ class MainActivity : AppCompatActivity(), ListAdapter.ItemClicked {
             binding.idToolbar.visibility = View.GONE
             binding.idSearchToolbar.visibility = View.VISIBLE
         }
+    }
+
+    override fun dataUpdated() {
+        adapter?.notifyDataSetChanged()
     }
 }
